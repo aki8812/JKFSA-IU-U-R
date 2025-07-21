@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>253wijfih3#JIHhj3i2hU#*(U%US)IAFJ！</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f8ff;
+      text-align: center;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    #result {
+      font-size: 22px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <p id="result">.......</p>
+
+  <script>
+    fetch("https://ipapi.co/json/")
+      .then(res => res.json())
+      .then(data => {
+        const city = data.city || "@@@@";
+        const region = data.region || "";
+        const country = data.country_name || "";
+
+        const resultText = `You are now in：<strong>${city}</strong>，<strong>${region}</strong>，<strong>${country}</strong>`;
+        document.getElementById('result').innerHTML = resultText;
+      })
+      .catch(() => {
+        document.getElementById('result').textContent = "@@@@ :(";
+      });
+  </script>
+</body>
+</html>
